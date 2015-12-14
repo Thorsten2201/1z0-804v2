@@ -1,18 +1,15 @@
 package de.bbq.java.vce.Iz0804v2;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class Launcher {
-	
 	private void navigate() {
 		System.out.println("Ausgabe der Programms: \r\n");
 		switch (this.input) {
 		case 1:
-			Painting p = new Painting();
-			p.main(null);
+			Painting.main(null);
 			break;
 		case 2:
 			Fibonacci q = new Fibonacci(10);
@@ -23,15 +20,44 @@ public class Launcher {
 			System.out.println("Time in milliseconds: " + diff + " seconds.");   
 			Fibonacci qb = new Fibonacci(10);
 			Date d1b = new Date();
-			q.compute();
+			qb.compute();
 			Date d2b = new Date();
 			long diffb = d2b.getTime() - d1b.getTime();
 			System.out.println("Time in milliseconds: " + diffb + " seconds diffenent way.");   			
 			break;
 		case 3:
-			Garden g = new Garden();
-			g.main(null);
+			CompareTest.main(null);
 			break;
+		case 4:
+			Garden.main(null);
+			break;
+		case 5:
+			Main.main(null);
+			break;
+		case 6:
+			Print01.main(null);
+			break;	
+		case 7:
+			TestRideable.main(null);
+			break;
+		case 8:
+			Director.main(null);
+			break;
+		case 9:
+			try {
+				SleepOtherThread.main(null);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				showMessage(e.getLocalizedMessage());
+			}
+			break;		
+		case 10:
+			// The program Prints each Record with a valid connection because it compiles fine
+			TestSQL.main(null);
+			break;					
+		case 11:
+
+			break;					
 		}
 	}
 	
@@ -45,7 +71,13 @@ public class Launcher {
 		name = ++i + ". Painting (Pastel, *Enamel, Fresco, *Gouache)\r\n";
 		name += ++i + ". Fibonacci \r\n";
 		name += ++i + ". CompareTest \r\n";		
-		name += ++i + ". Garden \r\n";			
+		name += ++i + ". Garden \r\n";		
+		name += ++i + ". What is the result? \r\n";	
+		name += ++i + ". We have 002 Blue pants that cost $24,99\r\n";
+		name += ++i + ". Rideable\r\n";	
+		name += ++i + ". John Harry\r\n";	
+		name += ++i + ". SleepOtherThread\r\n";	
+		name += ++i + ". Assume that the SQL query returns records.\r\n";		
 		name += ++i + ". Programm beenden";
 		this.exitInput = i;
 		return name;

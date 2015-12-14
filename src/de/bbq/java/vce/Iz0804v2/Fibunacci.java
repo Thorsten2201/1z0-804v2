@@ -23,8 +23,8 @@ class Fibonacci extends RecursiveTask<Integer> {
 
 		Fibonacci f2 = new Fibonacci(n - 2);
 
-//		return f2.compute() + f1.join(); // Line X
-		return f1.join()+f2.compute() ; // Line X replace
+		return f2.compute() + f1.join(); // Line X
+//		return f1.join()+f2.compute() ; // Line X replace
 	}
 	public Integer compute2() {
 
